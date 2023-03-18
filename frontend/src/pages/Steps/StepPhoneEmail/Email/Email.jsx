@@ -1,11 +1,10 @@
-import React,{useState} from 'react'
-import Button from '../../../../components/Button/Button';
-import Card from '../../../../components/shared/Card/Card';
-import TextInput from '../../../../components/shared/TextInput/TextInput';
-import styles from '../StepPhoneEmail.module.css'
-const Email = ({onNext}) => {
-
-  const [email, setEmail] = useState('')
+import React, { useState } from "react";
+import Button from "../../../../components/shared/Card/Button/Button";
+import Card from "../../../../components/shared/Card/Card";
+import TextInput from "../../../../components/shared/TextInput/TextInput";
+import styles from "../StepPhoneEmail.module.css";
+const Email = ({ onNext }) => {
+  const [email, setEmail] = useState("");
   return (
     <Card title="Enter your email id" icon="phone">
       <TextInput value={email} onchange={(e) => setEmail(e.target.value)} />
@@ -21,6 +20,6 @@ const Email = ({onNext}) => {
       </div>
     </Card>
   );
-}
+};
 
-export default Email
+export default Email;

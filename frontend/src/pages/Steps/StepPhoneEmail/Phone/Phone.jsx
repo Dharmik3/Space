@@ -1,13 +1,12 @@
-import React,{useState} from 'react'
-import Card from '../../../../components/shared/Card/Card';
-import Button from '../../../../components/Button/Button';
+import React, { useState } from "react";
+import Card from "../../../../components/shared/Card/Card";
+import Button from "../../../../components/shared/Card/Button/Button";
 import styles from "../StepPhoneEmail.module.css";
-import { Navigate } from 'react-router-dom';
-import TextInput from '../../../../components/shared/TextInput/TextInput';
+import { Navigate } from "react-router-dom";
+import TextInput from "../../../../components/shared/TextInput/TextInput";
 
-const Phone = ({onNext}) => {
-
-  const [phoneNumber, setPhoneNumber] = useState('')
+const Phone = ({ onNext }) => {
+  const [phoneNumber, setPhoneNumber] = useState("");
   return (
     <Card title="Enter your phone number" icon="phone">
       <TextInput
@@ -16,13 +15,16 @@ const Phone = ({onNext}) => {
       />
       <div>
         <div className={styles.actionBtnWrap}>
-          <Button text="Next" onClick={onNext}/>
+          <Button text="Next" onClick={onNext} />
         </div>
 
-        <p className={styles.bottomParagraph}>By entering phone number, you're agreeing to our Terms of Service and Privacy Policy. Thanks!</p>
+        <p className={styles.bottomParagraph}>
+          By entering phone number, you're agreeing to our Terms of Service and
+          Privacy Policy. Thanks!
+        </p>
       </div>
     </Card>
   );
-}
+};
 
-export default Phone
+export default Phone;

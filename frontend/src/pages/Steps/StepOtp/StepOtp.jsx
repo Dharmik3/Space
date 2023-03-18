@@ -1,18 +1,15 @@
-import React,{useState} from 'react'
-import Card from '../../../components/shared/Card/Card'
-import TextInput from '../../../components/shared/TextInput/TextInput'
-import Button from '../../../components/Button/Button'
-import styles from './StepOtp.module.css'
+import React, { useState } from "react";
+import Card from "../../../components/shared/Card/Card";
+import TextInput from "../../../components/shared/TextInput/TextInput";
+import Button from "../../../components/shared/Card/Button/Button";
+import styles from "./StepOtp.module.css";
 const StepOtp = ({ onNext }) => {
-  const [otp, setOtp] = useState('')
+  const [otp, setOtp] = useState("");
   return (
     <>
       <div className={styles.cardWrapper}>
         <Card title="Enter One Time Password" icon="phone">
-          <TextInput
-            value={otp}
-            onchange={(e) => setOtp(e.target.value)}
-          />
+          <TextInput value={otp} onchange={(e) => setOtp(e.target.value)} />
           <div>
             <div className={styles.actionBtnWrap}>
               <Button text="Next" />
@@ -29,4 +26,4 @@ const StepOtp = ({ onNext }) => {
   );
 };
 
-export default StepOtp
+export default StepOtp;
