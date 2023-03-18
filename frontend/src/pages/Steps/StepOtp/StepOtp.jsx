@@ -8,7 +8,7 @@ const StepOtp = ({ onNext }) => {
   return (
     <>
       <div className={styles.cardWrapper}>
-        <Card title="Enter One Time Password" icon="phone">
+        <Card title="Enter One Time Password" icon="lock">
           <TextInput value={otp} onchange={(e) => setOtp(e.target.value)} />
           <div>
             <div className={styles.actionBtnWrap}>

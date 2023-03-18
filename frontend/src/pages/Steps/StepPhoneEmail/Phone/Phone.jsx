@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import Card from "../../../../components/shared/Card/Card";
 import Button from "../../../../components/shared/Card/Button/Button";
 import styles from "../StepPhoneEmail.module.css";
-import { Navigate } from "react-router-dom";
 import TextInput from "../../../../components/shared/TextInput/TextInput";
 
 const Phone = ({ onNext }) => {

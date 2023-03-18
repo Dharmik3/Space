@@ -1,16 +1,11 @@
 import React from "react";
-import { Link, useNavigate } from "react-router-dom";
+import {  useNavigate } from "react-router-dom";
 import Button from "../../components/shared/Card/Button/Button";
 import Card from "../../components/shared/Card/Card";
 import styles from "./Home.module.css";
 
 const Home = () => {
-  const signINLinkStyle = {
-    color: "#0077ff",
-    fontWeight: "bold",
-    textDecoration: "none",
-    marginLeft: "10px",
-  };
+ 
   const navigate = useNavigate();
   const startRegister = () => {
     navigate("/authenticate");

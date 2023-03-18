@@ -6,7 +6,7 @@ import styles from "../StepPhoneEmail.module.css";
 const Email = ({ onNext }) => {
   const [email, setEmail] = useState("");
   return (
-    <Card title="Enter your email id" icon="phone">
+    <Card title="Enter your email id" icon="email">
       <TextInput value={email} onchange={(e) => setEmail(e.target.value)} />
       <div>
         <div className={styles.actionBtnWrap}>
