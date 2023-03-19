@@ -5,12 +5,15 @@ import TextInput from "../../../../components/shared/TextInput/TextInput";
 import styles from "../StepPhoneEmail.module.css";
 const Email = ({ onNext }) => {
   const [email, setEmail] = useState("");
+  const submit=() => {
+    onNext();
+  }
   return (
     <Card title="Enter your email id" icon="email">
-      <TextInput value={email} onchange={(e) => setEmail(e.target.value)} />
+      <TextInput value={email} onChange={(e) => setEmail(e.target.value)} />
       <div>
         <div className={styles.actionBtnWrap}>
-          <Button text="Next" onClick={onNext} />
+          <Button text="Next" onClick={submit} />
         </div>
 
         <p className={styles.bottomParagraph}>

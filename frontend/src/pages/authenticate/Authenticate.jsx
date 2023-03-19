@@ -8,12 +8,12 @@ const steps = {
 };
 
 const Authenticate = () => {
-  const [step, setStep] = useState(1);
-  const Step = steps[step];
+  const [stepNumber, setStepNumber] = useState(1);
+  const Step = steps[stepNumber];
 
-  const handleNext = () => {
-    setStep(step + 1);
-  };
+  function handleNext() {
+    setStepNumber(stepNumber + 1);
+  }
   return <Step onNext={handleNext} />;
 };
 
