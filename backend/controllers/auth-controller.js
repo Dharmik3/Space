@@ -24,9 +24,7 @@ class AuthController {
         //   sendotp
         try {
             // await otpService.sendBySms(phone, otp);
-        const ck = await res.cookie('hi', 'test', {
-                maxAge: 1000 * 60,
-        })
+    
             
             return res.json({
                 hash: `${hash}.${expires}`,

@@ -5,7 +5,7 @@ const api = axios.create({
     // credentials: 'include',
 
     // baseURL: 'http://localhost:5500/',
-    baseURL: 'http://192.168.168.179:5500/',
+    baseURL: 'http://192.168.43.169:5500/',
     headers: {
         'Content-Type': 'application/json',
         Accept:'application/json',
@@ -15,6 +15,7 @@ const api = axios.create({
 // endpoints
 export const sendOtp = (data) => api.post('api/send-otp', data)
 export const verifyOtp = (data) => api.post('api/verify-otp', data)
+export const activate = (data) => api.post('api/activate', data)
 
 
 export default api;
