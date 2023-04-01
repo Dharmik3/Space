@@ -13,6 +13,7 @@ const Phone = ({ onNext }) => {
   const dispatch = useDispatch();
 
   const submit = async () => {
+    if (!phoneNumber) return;
     const { data } = await sendOtp({ phone: phoneNumber });
     const{phone,hash}=data
     dispatch(setOtp({ phone, hash }));

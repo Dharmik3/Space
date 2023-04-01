@@ -4,7 +4,7 @@ const api = axios.create({
     withCredentials: true,
     // credentials: 'include',
 
-    baseURL: 'http://192.168.43.169:5500',
+    baseURL: 'http://192.168.126.179:5500',
     // baseURL: 'http://192.168.43.169:5500/',
     headers: {
         'Content-Type': 'application/json',
@@ -16,6 +16,7 @@ const api = axios.create({
 export const sendOtp = (data) => api.post('api/send-otp', data)
 export const verifyOtp = (data) => api.post('api/verify-otp', data)
 export const activate = (data) => api.post('api/activate', data)
+export const logout = () => api.post('api/logout')
 
 
 // iterceptors
@@ -28,7 +29,7 @@ api.interceptors.response.use((config) => {
     if (error.response.status === 401 && orignalRequest && !orignalRequest._isRetry) {
         orignalRequest._isRetry = true;
         try {
-            const response = await axios.get(`http://192.168.43.169:5500/api/refresh`, {
+             await axios.get(`http://192.168.126.179:5500/api/refresh`, {
                 withCredentials:true,
             })
 

@@ -91,14 +91,13 @@ class AuthController {
     async refresh(req, res) {
         // get refresh token from cookie
         const { refreshToken: refreshtokenFromCookie } = req.cookies;
-        console.log(refreshtokenFromCookie);
+        
         // check if token is valid
         let userData;
         try {
             userData = await tokenService.verifyRefreshToken(refreshtokenFromCookie)
-            console.log(userData);
+           
         } catch (err) {
-            console.log('here');
             return res.status(401).json({ message: "Invalid token" })
         }
 
@@ -144,6 +143,18 @@ class AuthController {
 
         res.json({ user: userDto, auth: true });
     }
+
+    async logout(req, res) {
+        const { refreshToken } = req.cookies;
+        //  delete refreshtoken from db
+        await tokenService.removeToken(refreshToken);
+        
+    //    delete cookies
+        res.clearCookie('refreshToken');
+        res.clearCookie('accessToken');
+
+        res.json({user:null,auth:false});
+     }
 }
 
 module.exports = new AuthController();
