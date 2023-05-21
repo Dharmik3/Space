@@ -1,10 +1,11 @@
 import axios from 'axios'
 
+console.log(process.env.REACT_APP_API_URL);
 const api = axios.create({
     withCredentials: true,
     // credentials: 'include',
 
-    baseURL: 'http://192.168.126.179:5500',
+    baseURL: 'http://localhost:5500/',
     // baseURL: 'http://192.168.43.169:5500/',
     headers: {
         'Content-Type': 'application/json',
@@ -29,7 +30,7 @@ api.interceptors.response.use((config) => {
     if (error.response.status === 401 && orignalRequest && !orignalRequest._isRetry) {
         orignalRequest._isRetry = true;
         try {
-             await axios.get(`http://192.168.126.179:5500/api/refresh`, {
+            await axios.get(`http://localhost:5500/api/refresh`, {
                 withCredentials:true,
             })
 

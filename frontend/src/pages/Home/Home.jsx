@@ -22,7 +22,7 @@ const Home = () => {
           <Button onClick={startRegister} text="Let's Go" />
         </div>
         <div className={styles.signinWrapper}>
-          <sapn className={styles.hasInvite}>Have an invite text?</sapn>
+          <span className={styles.hasInvite}>Have an invite text?</span>
         </div>
       </Card>
     </div>

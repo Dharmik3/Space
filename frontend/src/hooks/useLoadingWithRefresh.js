@@ -10,7 +10,7 @@ export function useLoadingWithRefresh() {
         (async () => {
 
             try {
-                const { data } = await axios.get(`http://192.168.126.179:5500/api/refresh`, {
+                const { data } = await axios.get(`http://localhost:5500/api/refresh`, {
                     withCredentials: true,
                 })
                 dispatch(setAuth(data));
